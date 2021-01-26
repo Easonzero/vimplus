@@ -243,10 +243,6 @@ function install_to_user_on_linux()
     ln -s $desc_vimplus_path".vimrc" $desc_home_path
     chown -R $desc_username":"$desc_username $desc_home_path".vimrc"
 
-    rm -rf $desc_home_path".ycm_extra_conf.py"
-    ln -s $desc_vimplus_path".ycm_extra_conf.py" $desc_home_path
-    chown -R $desc_username":"$desc_username $desc_home_path".ycm_extra_conf.py"
-
     ln -s $desc_vimplus_path"colors" $desc_vim_path
     chown -R $desc_username":"$desc_username $desc_vim_path"colors"
 

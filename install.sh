@@ -403,9 +403,6 @@ function copy_files()
     rm -rf ~/.vimrc.custom.config
     cp ${PWD}/.vimrc.custom.config ~
 
-    rm -rf ~/.ycm_extra_conf.py
-    ln -s ${PWD}/.ycm_extra_conf.py ~
-
     mkdir ~/.vim
     rm -rf ~/.vim/colors
     ln -s ${PWD}/colors ~/.vim
@@ -452,54 +449,6 @@ function install_vim_plugin()
     vim -c "PlugInstall" -c "q" -c "q"
 }
 
-# 安装ycm插件
-function install_ycm()
-{
-    git clone https://gitee.com/chxuan/YouCompleteMe-clang.git ~/.vim/plugged/YouCompleteMe
-
-    cd ~/.vim/plugged/YouCompleteMe
-
-    read -p "Please choose to compile ycm with python2 or python3, if there is a problem with the current selection, please choose another one. [2/3] " version
-    if [[ $version == "2" ]]; then
-        echo "Compile ycm with python2."
-        {
-            python2.7 ./install.py --clang-completer
-        } || {
-            echo "##########################################"
-            echo "Build error, trying rebuild without Clang."
-            echo "##########################################"
-            python2.7 ./install.py
-        }
-    else
-        echo "Compile ycm with python3."
-        {
-            python3 ./install.py --clang-completer
-        } || {
-            echo "##########################################"
-            echo "Build error, trying rebuild without Clang."
-            echo "##########################################"
-            python3 ./install.py
-        }
-    fi
-}
-
-# 在android上安装ycm插件
-function install_ycm_on_android()
-{
-    git clone https://gitee.com/chxuan/YouCompleteMe-clang.git ~/.vim/plugged/YouCompleteMe
-
-    cd ~/.vim/plugged/YouCompleteMe
-
-    read -p "Please choose to compile ycm with python2 or python3, if there is a problem with the current selection, please choose another one. [2/3] " version
-    if [[ $version == "2" ]]; then
-        echo "Compile ycm with python2."
-        python2.7 ./install.py --clang-completer --system-libclang
-    else
-        echo "Compile ycm with python3."
-        python3 ./install.py --clang-completer --system-libclang
-    fi
-}
-
 # 打印logo
 function print_logo()
 {
@@ -527,7 +476,6 @@ function install_vimplus_on_mac()
     install_prepare_software_on_mac
     copy_files
     install_fonts_on_mac
-    install_ycm
     install_vim_plugin
     print_logo
 }
@@ -547,7 +495,6 @@ function install_vimplus_on_android()
     install_prepare_software_on_android
     copy_files
     install_fonts_on_android
-    install_ycm_on_android
     install_vim_plugin
     print_logo
 }
@@ -557,7 +504,6 @@ function begin_install_vimplus()
 {
     copy_files
     install_fonts_on_linux
-    install_ycm
     install_vim_plugin
     print_logo
 }
