@@ -12,6 +12,8 @@
 | `<leader>o`         | 打开include文件                           |
 | `<leader>y`         | 拷贝函数声明                              |
 | `<leader>p`         | 生成函数实现                              |
+| `<leader>q`         | 查询变量类型                              |
+| `<leader>Q`         | 查询类型声明                              |
 | `<leader>w`         | 单词跳转                                  |
 | `<leader>f`         | 搜索~目录下的文件                         |
 | `<leader>F`         | 搜索当前目录下的文本                      |
