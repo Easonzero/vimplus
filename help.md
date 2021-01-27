@@ -57,6 +57,7 @@
 | `<leader><leader>i` | 安装插件                                  |
 | `<leader><leader>u` | 更新插件                                  |
 | `<leader><leader>c` | 删除插件                                  |
+| `<leader><leader>q` | 查询诊断信息                              |
 
 
 ## 插入模式
