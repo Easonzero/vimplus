@@ -123,7 +123,6 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'chxuan/cpp-mode'
 Plug 'chxuan/vim-edit'
 Plug 'chxuan/change-colorscheme'
 Plug 'chxuan/prepare-code'

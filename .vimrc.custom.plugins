@@ -18,9 +18,5 @@
 " UnPlug 'chxuan/prepare-code'
 
 Plug 'rust-lang/rust.vim'
-" :LspInstallServer install lsp for a language
-" Remember to removing ycm!
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
