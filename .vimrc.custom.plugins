@@ -18,5 +18,6 @@
 " UnPlug 'chxuan/prepare-code'
 
 Plug 'rust-lang/rust.vim'
-
+Plug 'm-pilia/vim-smarthome'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+UnPlug 'tpope/vim-endwise'
